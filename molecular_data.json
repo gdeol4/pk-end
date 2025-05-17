@@ -1,0 +1,96 @@
+{
+  "molecular_optimizations": [
+    {
+      "original": {
+        "smiles": "C1=CC=C(C=C1)C2=CC(=O)C3=C(O2)C=CC=C3",
+        "name": "Base Flavone",
+        "target": "COX-2 (PDB 5KIR)",
+        "initial_ic50": "12.4 μM"
+      },
+      "optimized": {
+        "smiles": "CC(C)(C)C1=CC=C(C=C1)C2=CC(=O)C3=C(O2)C=CC(OC)=C3",
+        "name": "4'-tButyl-6-methoxy Flavone",
+        "optimized_ic50": "0.87 μM",
+        "improvement_factor": 14.25
+      },
+      "rationale": "Added tert-butyl group at 4' position to enhance hydrophobic interactions with COX-2's side pocket (Leu384, Tyr385). Methoxy group at C6 improves membrane permeability while maintaining H-bond with Arg120."
+    },
+    {
+      "original": {
+        "smiles": "O=C1C2=C(O)C=CC=C2OC3=CC=CC=C13",
+        "name": "7-Hydroxy Flavone",
+        "target": "COX-2 (PDB 5KIR)",
+        "initial_ic50": "8.2 μM"
+      },
+      "optimized": {
+        "smiles": "O=C1C2=C(O)C=CC=C2OC3=CC=C(NC(=O)C4CC4)C=C13",
+        "name": "7-Hydroxy-3'-spirocyclopropaneamide Flavone",
+        "optimized_ic50": "0.43 μM",
+        "improvement_factor": 19.07
+      },
+      "rationale": "Introducing spirocyclopropaneamide at C3' position creates dual H-bond donors targeting Ser530 backbone carbonyl and Tyr355 hydroxyl. Cyclopropane ring enhances rigidity and proper pharmacophore alignment."
+    },
+    {
+      "original": {
+        "smiles": "COC1=CC=C(C=C1)C2=CC(=O)C3=C(O2)C=CC(F)=C3",
+        "name": "6-Fluoro-4'-methoxy Flavone",
+        "target": "COX-2 (PDB 5KIR)",
+        "initial_ic50": "5.6 μM"
+      },
+      "optimized": {
+        "smiles": "COC1=CC=C(C=C1)C2=CC(=O)C3=C(O2)C=CC(F)=C3S(=O)(=O)N",
+        "name": "6-Fluoro-4'-methoxy-8-sulfonamide Flavone",
+        "optimized_ic50": "0.12 μM",
+        "improvement_factor": 46.67
+      },
+      "rationale": "Sulfonamide addition at C8 position mimics NSAID carboxylate group, forming salt bridge with Arg120. Fluorine at C6 maintains halogen bonding with Tyr355 while reducing metabolic oxidation."
+    },
+    {
+      "original": {
+        "smiles": "O=C1C2=C(O)C=CC=C2OC3=CC=C(Cl)C=C3",
+        "name": "3'-Chloro Flavone",
+        "target": "COX-2 (PDB 5KIR)",
+        "initial_ic50": "9.8 μM"
+      },
+      "optimized": {
+        "smiles": "O=C1C2=C(O)C=CC=C2OC3=CC=C(Cl)C=C3C#CC4CCCCC4",
+        "name": "3'-Chloro-4-cyclohexylethynyl Flavone",
+        "optimized_ic50": "0.65 μM",
+        "improvement_factor": 15.08
+      },
+      "rationale": "Addition of cyclohexylethynyl group at C4 extends into COX-2's hydrophobic groove (Val349, Leu359). The rigid acetylene linker maintains proper spatial orientation while chlorine at C3' preserves π-stacking with Tyr385."
+    },
+    {
+      "original": {
+        "smiles": "CC1=CC=C(C=C1)C2=CC(=O)C3=C(O2)C=CC(OC)=C3",
+        "name": "4-Methyl-6-methoxy Flavone",
+        "target": "COX-2 (PDB 5KIR)",
+        "initial_ic50": "7.1 μM"
+      },
+      "optimized": {
+        "smiles": "CC1=CC=C(C=C1)C2=CC(=O)C3=C(O2)C=CC(OC)=C3N4CCOCC4",
+        "name": "4-Methyl-6-methoxy-8-morpholino Flavone",
+        "optimized_ic50": "0.29 μM",
+        "improvement_factor": 24.48
+      },
+      "rationale": "Morpholine substitution at C8 position enables water-mediated H-bonds with His90 and Gln192. Methyl group at C4 enhances hydrophobic contact with Leu384 while methoxy at C6 maintains optimal logP."
+    }
+  ],
+  "design_methodology": {
+    "target_site": "COX-2 active site (PDB 5KIR) with key residues: Arg120, Tyr355, Tyr385, Ser530",
+    "optimization_strategies": [
+      "Hydrophobic extension into side pocket (Val349-Leu359 region)",
+      "Strategic halogen placement for halogen bonding",
+      "Bioisosteric replacement of carboxylic acid groups",
+      "Rigidity introduction through spiro/cyclic systems",
+      "Water-mediated hydrogen bond networks"
+    ],
+    "computation_tools": [
+      "Molecular docking (AutoDock Vina)",
+      "MM-GBSA binding energy calculations",
+      "MD simulations (AMBER22)",
+      "QM/MM for reaction mechanism analysis",
+      "ADMET prediction (SwissADME)"
+    ]
+  }
+}
